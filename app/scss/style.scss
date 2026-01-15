@@ -308,7 +308,7 @@ body {
     color: vars.$color-text-muted;
     background-color: transparent;
   }
-  &__input + .join-us__input{
+  &__input + .join-us__input {
     padding-top: 10px;
   }
   &__btn {
@@ -328,50 +328,99 @@ body {
   }
 }
 
- /* <section designer */
+/* <section designer */
 
 .designer {
   padding: 150px 0 210px;
-    &__inner {
-      display: flex;
-      justify-content: space-between;
-      padding: 0 40px;
-    }
-    &__content {
-      max-width: 404px;
-    }
-    &__title {
-      @extend %lora-400;
-      font-size: 45px;
-      margin-bottom: 50px;
-    }
-    &__text {
-      color: vars.$color-text-muted;
-      margin-bottom: 25px;
-      font-size: 16px;
-    }
-    &__box {
-      position: relative;
-      text-align: center;
-    }
-    &__img {
-      margin-bottom: 40px;
-    }
-    &__coption {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+  }
+  &__content {
+    max-width: 404px;
+  }
+  &__title {
+    @extend %lora-400;
+    font-size: 45px;
+    margin-bottom: 50px;
+  }
+  &__text {
+    color: vars.$color-text-muted;
+    margin-bottom: 25px;
+    font-size: 16px;
+  }
+  &__box {
+    position: relative;
+    text-align: center;
+  }
+  &__img {
+    margin-bottom: 40px;
+  }
+  &__coption {
+    position: absolute;
+    @extend %lora-400;
+    padding: 20px 18px;
+    border: 3px solid vars.$bg-primary;
+    top: 180px;
+    left: -160px;
+    width: 296px;
+    background-color: #fff;
+  }
+  &__link {
+    display: inline-block;
+    font-size: 16px;
+    padding: 10px 93px;
+    color: vars.$color-text-muted;
+    border: 1px solid vars.$bg-primary;
+  }
+}
+
+/* section our-advanteges */
+
+.our-advantages {
+  background-color: vars.$bg-primary;
+
+  &__wrapper{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  &__img{
+    position: absolute;
+    bottom: 0;
+    left: 40px;
+  }
+  &__inner {
+    padding: 64px 130px 34px 0;
+    margin-left: auto;
+    position: relative;
+  }
+   &__decor{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  &__title {
+    @extend %lora-400;
+    font-size: 45px;
+    margin-bottom: 50px;
+  }
+  &__list {
+    column-count: 2;
+    column-gap: 80px;
+  }
+  &__item {
+    padding-left: 50px;
+    margin-bottom: 30px;
+    position: relative;
+    &::before{
+      content: '';
       position: absolute;
-       @extend %lora-400;
-       padding: 20px 18px;
-       border: 3px solid vars.$bg-primary;
-       top: 180px;
-       left: -160px;
-       width: 296px;
-       background-color: #fff;
+      width: 30px;
+      height: 22px;
+      left: 0;
+      background-image: url(../images/src/list-decor.svg);
     }
-    &__link {
-      display: inline-block;
-      font-size: 16px;
-      padding: 10px 93px;
-      color: vars.$color-text-muted;
-      border: 1px solid vars.$bg-primary;
-    }
+  }
 }
