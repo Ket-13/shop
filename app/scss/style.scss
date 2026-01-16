@@ -322,6 +322,8 @@ body {
     padding: 12px;
     border: none;
     cursor: pointer;
+    position: relative;
+    z-index: 10;
   }
   &__form-caption {
     font-size: 11px;
@@ -332,11 +334,21 @@ body {
 
 .designer {
   padding: 150px 0 210px;
+  position: relative;
   &__inner {
     display: flex;
     justify-content: space-between;
     padding: 0 40px;
   }
+
+  &__decor{
+    position: absolute;
+    top: -280px;
+    left: 52%;
+    transform: translateX(-50%);
+    z-index: 5;
+  }
+
   &__content {
     max-width: 404px;
   }
@@ -376,7 +388,7 @@ body {
   }
 }
 
-/* section our-advanteges */
+/* section our-advantages */
 
 .our-advantages {
   background-color: vars.$bg-primary;
@@ -423,4 +435,76 @@ body {
       background-image: url(../images/src/list-decor.svg);
     }
   }
+}
+
+
+/* section our-blog */
+
+.our-blog {
+  padding: 150px 0 100px;
+    &__inner {
+      display: grid;
+      grid-template-columns: 1fr 280px 330px;
+      grid-template-rows: 1fr 1fr;
+      gap: 20px;
+      padding: 0 40px;
+      background-image: url(../images/our-blog-decor.svg);
+      background-repeat: no-repeat;
+      background-position: bottom left;
+    }
+
+    &__content {}
+
+    &__title {
+    @extend %lora-400;
+    font-size: 45px;
+    margin-bottom: 50px;
+    }
+
+    &__text {
+      max-width: 400px;
+      margin-bottom: 50px;
+      color: vars.$color-text-muted;
+      font-size: 16px;
+    }
+
+    &__btn-link {
+      font-size: 16px;
+      display: inline-block;
+      padding: 10px 93px;
+      border: 1px solid vars.$bg-primary;
+      color: vars.$color-text-muted;
+    }
+
+    &__link {
+      margin-bottom: 5px;
+      @extend %lora-400;
+      font-size: 20px;
+      color: vars.$color-text-muted;
+    }
+
+    &__img {}
+
+    &__box {}
+
+    &__box-right {
+      grid-row: span 2;
+      align-self: center;
+      margin-top: -90px;
+    }
+
+    &__box-img {
+      margin-bottom: 20px;
+    }
+
+    &__box-date {
+      @extend %opensans-300;
+      color: vars.$color-primary;
+      font-size: 16px;
+    }
+
+    &__box-bottom {
+      grid-column: span 2;
+      margin-left: auto;
+    }
 }
