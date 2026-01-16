@@ -341,7 +341,7 @@ body {
     padding: 0 40px;
   }
 
-  &__decor{
+  &__decor {
     position: absolute;
     top: -280px;
     left: 52%;
@@ -393,12 +393,12 @@ body {
 .our-advantages {
   background-color: vars.$bg-primary;
 
-  &__wrapper{
+  &__wrapper {
     display: flex;
     flex-direction: column;
     position: relative;
   }
-  &__img{
+  &__img {
     position: absolute;
     bottom: 0;
     left: 40px;
@@ -408,7 +408,7 @@ body {
     margin-left: auto;
     position: relative;
   }
-   &__decor{
+  &__decor {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -426,8 +426,8 @@ body {
     padding-left: 50px;
     margin-bottom: 30px;
     position: relative;
-    &::before{
-      content: '';
+    &::before {
+      content: "";
       position: absolute;
       width: 30px;
       height: 22px;
@@ -437,69 +437,134 @@ body {
   }
 }
 
-
 /* section our-blog */
 
 .our-blog {
   padding: 150px 0 100px;
-    &__inner {
-      display: grid;
-      grid-template-columns: 1fr 280px 330px;
-      grid-template-rows: 1fr 1fr;
-      gap: 20px;
-      padding: 0 40px;
-      background-image: url(../images/our-blog-decor.svg);
-      background-repeat: no-repeat;
-      background-position: bottom left;
-    }
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 280px 330px;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    padding: 0 40px;
+    background-image: url(../images/our-blog-decor.svg);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+  }
 
-
-    &__title {
+  &__title {
     @extend %lora-400;
     font-size: 45px;
     margin-bottom: 50px;
-    }
+  }
 
-    &__text {
-      max-width: 400px;
-      margin-bottom: 50px;
+  &__text {
+    max-width: 400px;
+    margin-bottom: 50px;
+    color: vars.$color-text-muted;
+    font-size: 16px;
+  }
+
+  &__btn-link {
+    font-size: 16px;
+    display: inline-block;
+    padding: 10px 93px;
+    border: 1px solid vars.$bg-primary;
+    color: vars.$color-text-muted;
+  }
+
+  &__link {
+    margin-bottom: 5px;
+    @extend %lora-400;
+    font-size: 20px;
+    color: vars.$color-text-muted;
+  }
+
+  &__box-right {
+    grid-row: span 2;
+    align-self: center;
+    margin-top: -90px;
+  }
+
+  &__box-img {
+    margin-bottom: 20px;
+  }
+
+  &__box-date {
+    @extend %opensans-300;
+    color: vars.$color-primary;
+    font-size: 16px;
+  }
+
+  &__box-bottom {
+    grid-column: span 2;
+    margin-left: auto;
+  }
+}
+
+/* section appointment */
+
+.appointment {
+  padding: 50px 0 130px;
+  background-image: url(../images/appointment-decor.svg);
+  background-repeat: no-repeat;
+  background-position: center 105px;
+
+  &__title {
+    text-align: center;
+    font-size: 45px;
+    @extend %lora-400;
+    margin-bottom: 77px;
+  }
+
+  &__box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 0 40px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+
+  &__form-title {
+    @extend %lora-400;
+    font-size: 30px;
+    margin-bottom: 80px;
+  }
+
+  &__form-text {
+    margin-bottom: 30px;
+    color: vars.$color-text-muted;
+    @extend %opensans-700;
+  }
+
+  &__input {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid vars.$color-text-muted;
+    color: vars.$color-text-muted;
+    background-color: transparent;
+    &::placeholder {
       color: vars.$color-text-muted;
-      font-size: 16px;
     }
+  }
 
-    &__btn-link {
-      font-size: 16px;
-      display: inline-block;
-      padding: 10px 93px;
-      border: 1px solid vars.$bg-primary;
-      color: vars.$color-text-muted;
-    }
+  &__btn {
+    margin-top: auto;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 12px;
+    border-radius: 3px;
+    border: none;
+    background-color: vars.$color-accent;
+    cursor: pointer;
+  }
 
-    &__link {
-      margin-bottom: 5px;
-      @extend %lora-400;
-      font-size: 20px;
-      color: vars.$color-text-muted;
-    }
-
-    &__box-right {
-      grid-row: span 2;
-      align-self: center;
-      margin-top: -90px;
-    }
-
-    &__box-img {
-      margin-bottom: 20px;
-    }
-
-    &__box-date {
-      @extend %opensans-300;
-      color: vars.$color-primary;
-      font-size: 16px;
-    }
-
-    &__box-bottom {
-      grid-column: span 2;
-      margin-left: auto;
-    }
+  &__img {
+  }
 }
