@@ -9,6 +9,7 @@ body {
   font-size: 20px;
   line-height: 1.3;
   color: vars.$color-accent;
+  background-color: #fff;
 }
 
 html,
@@ -24,18 +25,6 @@ body {
 
 .main {
   flex: 1;
-}
-
-.container {
-  max-width: 1220px;
-  padding: 0 10px;
-  margin: 0 auto;
-}
-
-.container-big {
-  max-width: 1540px;
-  padding: 0 10px;
-  margin: 0 auto;
 }
 
 .promo {
@@ -147,9 +136,11 @@ body {
 
   &__form-btn {
     position: absolute;
-    top: 5px;
+    top: 10px;
     right: 0;
     @extend %button-reset;
+    height: 44px;
+    width: 44px;
   }
 
   &__bottom {
@@ -1204,10 +1195,10 @@ body {
 .blog-one {
   margin-bottom: 10px;
   &__content {
-    b:first-of-type{
+    b:first-of-type {
       margin-bottom: 60px;
     }
-    picture:first-of-type{
+    picture:first-of-type {
       margin-bottom: 40px;
       padding-bottom: 40px;
       border: 1px solid #dcddde;
@@ -1237,7 +1228,7 @@ body {
       font-size: 40px;
       margin-bottom: 40px;
     }
-    li:has(ul){
+    li:has(ul) {
       list-style-type: none;
     }
     & > ul {
