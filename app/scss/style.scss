@@ -77,8 +77,6 @@ body {
   display: inline-block;
 }
 
-/* footer */
-
 .footer {
   font-size: 16px;
   color: vars.$color-text-muted;
@@ -138,7 +136,6 @@ body {
     position: absolute;
     top: 10px;
     right: 0;
-    @extend %button-reset;
     height: 44px;
     width: 44px;
   }
@@ -176,8 +173,6 @@ body {
   }
 }
 
-/* главній єкран */
-
 .top {
   min-height: 90vh;
   background-size: cover;
@@ -209,8 +204,6 @@ body {
     padding: 12px 38px;
   }
 }
-
-/* section new-collection */
 
 .new-collection {
   background-image: url(../images/new-collection-decor.svg);
@@ -270,8 +263,6 @@ body {
   }
 }
 
-/* section join-us */
-
 .join-us {
   background-color: vars.$bg-primary;
   &__inner {
@@ -327,8 +318,6 @@ body {
     font-size: 11px;
   }
 }
-
-/* <section designer */
 
 .designer {
   padding: 150px 0 210px;
@@ -386,8 +375,6 @@ body {
   }
 }
 
-/* section our-advantages */
-
 .our-advantages {
   background-color: vars.$bg-primary;
 
@@ -434,8 +421,6 @@ body {
     }
   }
 }
-
-/* section our-blog */
 
 .our-blog {
   padding: 150px 0 100px;
@@ -500,8 +485,6 @@ body {
   }
 }
 
-/* section appointment */
-
 .appointment {
   padding: 50px 0 130px;
   background-image: url(../images/appointment-decor.svg);
@@ -564,8 +547,6 @@ body {
   }
 }
 
-/* collections */
-
 .collections-top {
   min-height: 100vh;
   background-repeat: no-repeat;
@@ -598,8 +579,6 @@ body {
     left: -9px;
   }
 }
-
-/* collections */
 
 .collections {
   padding-bottom: 100px;
@@ -682,8 +661,6 @@ body {
   }
 }
 
-/* pagination */
-
 .pagination {
   padding-top: 50px;
   display: flex;
@@ -725,8 +702,6 @@ body {
     display: none;
   }
 }
-
-/* product */
 
 .product {
   padding-bottom: 150px;
@@ -826,13 +801,11 @@ body {
 }
 
 .radio-box {
-  position: absolute; /* прячем кружочки и квадратики ,что би потом их стилизоват */
-  width: 1px; /* прячем кружочки и квадратики ,что би потом их стилизоват */
-  height: 1px; /* прячем кружочки и квадратики ,что би потом их стилизоват */
-  overflow: hidden; /* прячем кружочки и квадратики ,что би потом их стилизоват */
-  clip: rect(
-    0 0 0 0
-  ); /* прячем кружочки и квадратики ,что би потом их стилизоват */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
   padding-left: 26px;
 
   &:checked + .radio-style::before {
@@ -858,13 +831,11 @@ body {
 }
 
 .check-box {
-  position: absolute; /* прячем кружочки и квадратики ,что би потом их стилизоват */
-  width: 1px; /* прячем кружочки и квадратики ,что би потом их стилизоват */
-  height: 1px; /* прячем кружочки и квадратики ,что би потом их стилизоват */
-  overflow: hidden; /* прячем кружочки и квадратики ,что би потом их стилизоват */
-  clip: rect(
-    0 0 0 0
-  ); /* прячем кружочки и квадратики ,что би потом их стилизоват */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
   padding-left: 20px;
   &:checked + .check-style::before {
     content: "";
@@ -894,8 +865,6 @@ body {
 .radio-label {
   padding-left: 26px;
 }
-
-/* accessories */
 
 .accessories {
   margin-bottom: 90px;
@@ -959,8 +928,6 @@ body {
     right: 7px;
   }
 }
-
-/* .page-404 */
 
 .page-404 {
   &__container {
@@ -1028,8 +995,6 @@ body {
   }
 }
 
-/* blog-main */
-
 .blog-main {
   margin-bottom: 32px;
   &__inner {
@@ -1079,7 +1044,6 @@ body {
   }
 }
 
-/* blog */
 .blog {
   &__nav {
     display: flex;
@@ -1092,9 +1056,6 @@ body {
     margin-right: auto;
     @extend %lora-400;
     font-size: 32px;
-  }
-
-  &__select-form {
   }
 
   &__search {
@@ -1158,7 +1119,6 @@ body {
   }
 
   &__item-title {
-    @extend %lora-500;
     margin-bottom: 8px;
     font-size: 24px;
   }
@@ -1189,8 +1149,6 @@ body {
     }
   }
 }
-
-/* .blog-one  */
 
 .blog-one {
   margin-bottom: 10px;
@@ -1224,7 +1182,6 @@ body {
       max-width: 1220px;
     }
     h3 {
-      @extend %lora-500;
       font-size: 40px;
       margin-bottom: 40px;
     }
@@ -1279,12 +1236,144 @@ body {
     align-items: center;
   }
 
-  &__stats-item {
-  }
-
   &__stats-link {
     display: flex;
     gap: 4px;
     align-items: center;
+  }
+}
+
+.reviews {
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+
+  &__top-title {
+    font-size: 64px;
+    @extend %lora-400;
+  }
+
+  &__top-link {
+    color: rgba($color: vars.$color-accent, $alpha: 0.4);
+    border-bottom: 1px solid vars.$color-accent;
+    font-size: 24px;
+  }
+
+  &__slider-box {
+    margin-bottom: 60px;
+  }
+
+  &__slider {
+    margin-bottom: 24px;
+    overflow: hidden;
+    width: calc(100vw - (100vw - 1500px) / 2);
+  }
+
+  &__slider-wrapper {
+  }
+
+  &__slide {
+  }
+
+  &__slider-addreview {
+    display: inline-block;
+    font-size: 16px;
+    padding: 24px 40px;
+    border: 1px solid vars.$color-accent;
+    margin-top: 24px;
+  }
+  &__item {
+    padding: 40px 50px;
+    border: 1px solid #dcddde;
+    margin-top: 20px;
+  }
+
+  &__item-date {
+    font-size: 14px;
+    opacity: 0.4;
+    margin-bottom: 16px;
+  }
+
+  &__item-name {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-size: 24px;
+    margin-top: 18px;
+    margin-bottom: 24px;
+  }
+
+  &__item-avatar-img {
+  }
+
+  &__item-text {
+    margin-bottom: 24px;
+  }
+
+  &__item-box-img {
+    display: flex;
+    gap: 10px;
+  }
+  &__slider-nav {
+    position: absolute;
+    max-width: 1520px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 24px;
+    cursor: pointer;
+  }
+
+  &__arrow-prev {
+    right: 158px;
+  }
+
+  &__arrow-next {
+    right: 0;
+  }
+
+  &__pagination {
+    position: absolute;
+    top: 20px;
+    right: 44px;
+    left: auto;
+    width: auto;
+    color: #eeeceb;
+    .swiper-pagination-current {
+      color: vars.$color-accent;
+      display: inline-block;
+      padding-right: 10px;
+    }
+    span + span{
+      padding-left: 10px;
+    }
+  }
+}
+
+.reviews-box {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+  &__all {
+    color: rgba($color: vars.$color-accent, $alpha: 0.4);
+    border-bottom: 1px solid vars.$color-accent;
+    font-size: 16px;
+    margin-left: 10px;
   }
 }

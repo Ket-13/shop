@@ -15,61 +15,67 @@ const include = require("gulp-include");
 const svgstore = require("gulp-svgstore");
 
 function sprites() {
-  return src("app/images/sprite/*.svg")
+  return src('app/images/sprite/*.svg')
     .pipe(svgstore())
-    .pipe(dest("app/images"));
+    .pipe(dest('app/images'))
 }
 
 function pages() {
-  return src("app/pages/*.html")
-    .pipe(
-      include({
-        includePaths: "app/components",
-      }),
-    )
-    .pipe(dest("dist"))
-    .pipe(browserSync.stream());
+  return src('app/pages/*.html')
+    .pipe(include({
+      includePaths: 'app/components'
+    }))
+    .pipe(dest('app'))
+    .pipe(browserSync.stream())
 }
 
 function fonts() {
-  return src("app/fonts/*.ttf").pipe(ttf2woff2()).pipe(dest("app/fonts"));
+  return src('app/fonts/*.ttf')
+    .pipe(ttf2woff2())
+    .pipe(dest('app/fonts'))
 }
 
 function images() {
-  return src(["app/images/src/*.*", "!app/images/src/*.svg"])
-    .pipe(newer("app/images"))
+  return src(['app/images/src/*.*', '!app/images/src/*.svg'])
+    .pipe(newer('app/images'))
     .pipe(avif({ quality: 50 }))
 
-    .pipe(src("app/images/src/*.*"))
-    .pipe(newer("app/images"))
+    .pipe(src('app/images/src/*.*'))
+    .pipe(newer('app/images'))
     .pipe(webp())
 
-    .pipe(src("app/images/src/*.*"))
-    .pipe(newer("app/images"))
+    .pipe(src('app/images/src/*.*'))
+    .pipe(newer('app/images'))
     .pipe(imagemin())
 
-    .pipe(dest("app/images"));
+    .pipe(dest('app/images'))
 }
 
 function styles() {
-  return src("app/scss/*.scss")
+  return src('app/scss/style.scss')
+    .pipe(
+      scss({ outputStyle: 'compressed' }).on('error', scss.logError)
+    )
     .pipe(
       autoprefixer({
-        overrideBrowserslist: ["last 10 versions"],
-      }),
+        overrideBrowserslist: ['last 10 versions'],
+        cascade: false
+      })
     )
-    .pipe(scss({ style: "compressed" }))
-    .pipe(concat("style.min.css"))
-    .pipe(dest("app/css"))
+    .pipe(concat('style.min.css'))
+    .pipe(dest('app/css'))
     .pipe(browserSync.stream());
 }
 
 function scripts() {
-  return src(["node_modules/swiper/swiper-bundle.js", "app/js/main.js"])
-    .pipe(concat("main.min.js"))
+  return src([
+    'node_modules/swiper/swiper-bundle.js',
+    'app/js/main.js'
+  ])
+    .pipe(concat('main.min.js'))
     .pipe(uglify())
-    .pipe(dest("app/js"))
-    .pipe(browserSync.stream());
+    .pipe(dest('app/js'))
+    .pipe(browserSync.stream())
 }
 
 function watching() {
@@ -78,29 +84,27 @@ function watching() {
       baseDir: "app/",
     },
   });
-  watch(["app/scss/**/*.scss"], styles);
-  watch(["app/images/src"], images);
-  watch(["app/images/sprite"], sprites);
+  watch("app/scss/**/*.scss", styles);
+  watch("app/images/src/**/*", images);
+  watch("app/images/sprite/**/*.svg", sprites);
   watch(["app/pages/**/*.html", "app/components/**/*.html"], pages);
-  watch(["app/js/main.js"], scripts);
-  watch(["app/pages/**/*.html"]).on("change", browserSync.reload);
+  watch("app/js/main.js", scripts);
 }
 
 function cleanDist() {
-  return src("dist").pipe(clean());
+  return src('dist')
+  .pipe(clean())
 }
 
 function building() {
-  return src(
-    [
-      "app/*.html",
-      "app/js/main.min.js",
-      "app/css/style.min.css",
-      "app/images/*.*",
-      "app/fonts/*.woff2",
-    ],
-    { base: "app" },
-  ).pipe(dest("app"));
+  return src([
+    'app/*.html',
+    'app/js/main.min.js',
+    'app/css/style.min.css',
+    'app/images/*.*',
+    'app/fonts/*.woff2'
+  ], {base: 'app'})
+  .pipe(dest('dist'))
 }
 
 exports.styles = styles;
@@ -113,5 +117,5 @@ exports.pages = pages;
 exports.cleanDist = cleanDist;
 exports.building = building;
 
-exports.build = series(cleanDist, pages, building);
+exports.build = series(cleanDist, building);
 exports.default = parallel(styles, images, sprites, scripts, pages, watching);
