@@ -1,4 +1,3 @@
-
 const modeContainer = document.querySelector(".view-mode__container");
 const modeBtnGrid = document.querySelector("view-mode__btn-grid");
 const modeBtnLine = document.querySelector("view-mode__btn-line");
@@ -73,5 +72,3 @@ rangeMin.addEventListener("change", () => {
 rangeMax.addEventListener("change", () => {
   rangeSlider.noUiSlider.set([null, rangeMax.value]);
 });
-
-
