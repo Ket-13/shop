@@ -1,62 +1,197 @@
+<header class="header">
+  <div class="container">
+    <div class="header__inner">
+      <button class="header__btn">
+        <svg width="30" height="19">
+          <use xlink:href="images/sprite.svg#mobile-btn"></use>
+        </svg>
+      </button>
+      <div class="header__logo">
+        <a class="logo" href="#">
+          <img class="logo__img" src="images/logo.svg" alt="logo" />
+        </a>
+      </div>
 
-  <header class="header">
-    <div class="container">
-      <div class="header__inner">
-        <div class="header__logo">
-          <a class="logo" href="#">
-            <img class="logo__img" src="images/logo.svg" alt="logo">
-          </a>
-        </div>
+      <nav class="menu">
         <ul class="header__lang">
           <li class="header__lang-item header__lang--active">
-            <a class="header__lang-ling" href="/en" aria-label="Switch language to English">EN</a>/
+            <a
+              class="header__lang-ling"
+              href="/en"
+              aria-label="Switch language to English"
+              >EN</a
+            >/
           </li>
-           <li class="header__lang-item">
-            <a class="header__lang-ling" href="/ua" aria-label="Switch language to Ukrainian">UA</a>
-          </li>
-        </ul>
-        <nav class="menu">
-          <ul class="menu__list">
-            <li class="menu__item">
-              <a class="menu__item-link" href="#">CATALOG</a>
-            </li>
-            <li class="menu__item">
-              <a class="menu__item-link" href="#">COLLECTIONS</a>
-            </li>
-            <li class="menu__item">
-              <a class="menu__item-link" href="#">ABOUT</a>
-            </li>
-            <li class="menu__item">
-              <a class="menu__item-link" href="#">BOOK AN APPOINTMENT</a>
-            </li>
-            <li class="menu__item">
-              <a class="menu__item-link" href="#">CONTACT</a>
-            </li>
-          </ul>
-        </nav>
-        <ul class="header__actions">
-          <li class="header__actions-item">
-            <a class="header__actions-link" href="/account" aria-label="Open account page">
-              <svg width="24" height="24">
-                <use xlink:href="images/sprite.svg#user"></use>
-              </svg>
-            </a>
-          </li>
-           <li class="header__actions-item">
-            <a class="header__actions-link" href="/favorites" aria-label="Open favorites">
-              <svg width="24" height="22">
-                <use xlink:href="images/sprite.svg#wishlist"></use>
-              </svg>
-            </a>
-          </li>
-           <li class="header__actions-item">
-            <a class="header__actions-link" href="/cart" aria-label="Open shopping cart">
-              <svg width="24" height="24">
-                <use xlink:href="images/sprite.svg#shopping-bag"></use>
-              </svg>
-            </a>
+          <li class="header__lang-item">
+            <a
+              class="header__lang-ling"
+              href="/ua"
+              aria-label="Switch language to Ukrainian"
+              >UA</a
+            >
           </li>
         </ul>
+        <ul class="menu__list">
+          <li class="menu__item">
+            <a class="menu__item-link" href="#">CATALOG</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__item-link" href="#">COLLECTIONS</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__item-link" href="#">ABOUT</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__item-link" href="#">BOOK AN APPOINTMENT</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__item-link" href="#">CONTACT</a>
+          </li>
+        </ul>
+      </nav>
+      <ul class="header__actions">
+        <li class="header__actions-item">
+          <a
+            class="header__actions-link"
+            href="/account"
+            aria-label="Open account page"
+          >
+            <svg width="24" height="24">
+              <use xlink:href="images/sprite.svg#user"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="header__actions-item">
+          <a
+            class="header__actions-link"
+            href="/favorites"
+            aria-label="Open favorites"
+          >
+            <svg width="24" height="22">
+              <use xlink:href="images/sprite.svg#wishlist"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="header__actions-item">
+          <a
+            class="header__actions-link open-modal"
+            href="/cart"
+            aria-label="Open shopping cart"
+          >
+            <svg width="24" height="24">
+              <use xlink:href="images/sprite.svg#shopping-bag"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="modal" aria-hidden="true">
+      <div class="modal__overlay"></div>
+      <div class="modal__content" role="dialog" aria-modal="true">
+        <div class="checkout__details-items">
+          <div class="checkout__details-itemsline">
+            <p class="checkout__details-quantity">2 items in bag</p>
+            <button
+              class="checkout__details-del close-modal 
+              aria-label="Закрыть модальное окно"
+            >
+              <svg width="18" height="18">
+                <use xlink:href="images/sprite.svg#checkout-del"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="checkout__item">
+            <picture>
+              <source srcset="images/order-1.avif" type="image/avif" />
+              <source srcset="images/order-1.webp" type="image/webp" />
+              <img
+                class="checkout__item"
+                src="images/order-1.jpg"
+                alt="Alt text"
+                width="139"
+                height="182"
+              />
+            </picture>
+            <div class="checkout__item-box">
+              <p class="checkout__item-title">NAOMI</p>
+              <dl class="checkout__item-list">
+                <div class="checkout__item-listbox">
+                  <dt class="checkout__item-term">SIZE</dt>
+                  <dd class="checkout__item-difinition">S</dd>
+                </div>
+                <div class="checkout__item-listbox">
+                  <dt class="checkout__item-term">COLOR</dt>
+                  <dd class="checkout__item-difinition">IVORY</dd>
+                </div>
+                <div class="checkout__item-listbox">
+                  <dt class="checkout__item-term">Item subtotal</dt>
+                  <dd class="checkout__item-difinition">$ 2,600</dd>
+                </div>
+              </dl>
+              <button class="checkout__item-del">
+                <svg width="1" height="20">
+                  <use xlink:href="images/sprite.svg#item-del"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="checkout__item">
+            <picture>
+              <source srcset="images/order-2.avif" type="image/avif" />
+              <source srcset="images/order-2.webp" type="image/webp" />
+              <img
+                class="checkout__item"
+                src="images/order-2.jpg"
+                alt="Alt text"
+                width="139"
+                height="182"
+              />
+            </picture>
+            <div class="checkout__item-box">
+              <p class="checkout__item-title">SABINE</p>
+              <dl class="checkout__item-list">
+                <div class="checkout__item-listbox">
+                  <dt class="checkout__item-term">SIZE</dt>
+                  <dd class="checkout__item-difinition">38</dd>
+                </div>
+                <div class="checkout__item-listbox">
+                  <dt class="checkout__item-term">COLOR</dt>
+                  <dd class="checkout__item-difinition">IVORY</dd>
+                </div>
+                <div class="checkout__item-listbox">
+                  <dt class="checkout__item-term">Item subtotal</dt>
+                  <dd class="checkout__item-difinition">$ 200</dd>
+                </div>
+              </dl>
+              <button class="checkout__item-del">
+                <svg width="1" height="20">
+                  <use xlink:href="images/sprite.svg#item-del"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="order">
+          <dl class="order__list">
+            <div class="order__list-box">
+              <dt class="order__list-term">Subtotal</dt>
+              <dd class="order__list-difinition">$ 2,800</dd>
+            </div>
+            <div class="order__list-box">
+              <dt class="order__list-term">Shipping</dt>
+              <dd class="order__list-difinition">FREE</dd>
+            </div>
+            <div class="order__list-box">
+              <dt class="order__list-term">Total</dt>
+              <dd class="order__list-difinition">$ 2,800</dd>
+            </div>
+          </dl>
+          <div class="order__links">
+            <a class="order__link" href="#">KEEP SHOPPING</a>
+            <a class="order__link-now" href="#">BAY IT NOW</a>
+          </div>
+        </div>
       </div>
     </div>
-  </header>
+  </div>
+</header>
